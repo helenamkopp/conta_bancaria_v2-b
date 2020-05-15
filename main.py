@@ -1,5 +1,5 @@
 import abc
-from abc import ABC
+
 
 
 class Employee(abc.ABC):
@@ -21,8 +21,11 @@ class Manager(Employee):
         self._password = int(password)
         self._number_of_managed = int(number_of_managed)
 
+    # def get_bonus(self):
+    #     return super().get_bonus() + 1000
+
     def get_bonus(self):
-        return super().get_bonus() + 1000
+        return self._pay * 0.10
 
     def authenticate(self, password):
         if self._password == password:
