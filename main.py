@@ -1,10 +1,15 @@
-class Employee:
+import abc
+from abc import ABC
+
+
+class Employee(abc.ABC):
 
     def __init__(self, name, cpf, pay):
         self._name = str(name)
         self._cpf = str(cpf)
         self._pay = float(pay)
 
+    @abc.abstractmethod
     def get_bonus(self):
         return self._pay * 0.10
 
@@ -42,6 +47,14 @@ class BonusControl:
     @property
     def bonus_total(self):
         return self._bonus_total
+
+
+class Director(Employee):
+    def __init__(self, name, cpf, pay):
+        super().__init__(name, cpf, pay)
+
+    def get_bonus(self):
+        return self._pay * 0.10
 
 
 class Client:
