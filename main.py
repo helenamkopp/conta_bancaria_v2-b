@@ -1,7 +1,6 @@
 import abc
 
 
-
 class Employee(abc.ABC):
 
     def __init__(self, name, cpf, pay):
