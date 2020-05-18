@@ -14,3 +14,6 @@ Todo projeto é muito semelhante a v2-a e aqui, foco apenas nas mudanças princi
  
  # Arquivo test_main.py:
  contém dois pequenos testes onde um não funciona de propósito para mostrar o que foi descrito acima. 
+
+# Arquivo test_abstract.py:
+ contém um rápido teste utilizando a função get_bonus para o Manager e o Director
