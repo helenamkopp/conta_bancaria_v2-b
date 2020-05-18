@@ -9,7 +9,8 @@ classes filhas (class Manager e class Director)são obrigadas a utilizarem o mé
 a classe mãe definiu. 
 
 -> posso ter uma abstract class com vários métodos e apenas um deles ser um abstract metodo.. como vemos abaixo:
--> lembrando que as classes filhas obrigatoriamente precisam ter um full name e vão aplicar exatamente do mesmo jeito (se não o programa nao vai funcionar)
+-> lembrando que as classes filhas obrigatoriamente precisam ter um método full name (se não o programa nao vai funcionar) - importante:
+o método pode ser modificado de acordo com a sua necessidade.. vemos isso no repositório conta_bancaria_v1-c
 -> as classes filhas podem nao utilizar os metodos get_bonus e raise_pay e tambem podem utilizá-los fazendo as modificações necessárias.
 
 class Employee(abc.ABC):
