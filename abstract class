@@ -1,0 +1,38 @@
+#Explicação sobre classes abstratas
+
+* Eu torno um método abstrato de uma classe abstrata APENAS quando eu quero obrigar as classes filhas a utilizarem 
+aquele método exatamente igual
+
+* O get_bonus talvez nao seja um bom exemplo aqui.. visto que no projeto conta_bancaria_v2-a esse método na classe filha (class Manager)
+precisou ser modificado, visto que eram funções "iguais" mas com cálculos diferentes... aqui no projeto conta_bancaria_v2-b todas as 
+classes filhas (class Manager e class Director)são obrigadas a utilizarem o método get_bonus exatamente da mesma forma que 
+a classe mãe definiu. 
+
+-> posso ter uma abstract class com vários métodos e apenas um deles ser um abstract metodo.. como vemos abaixo:
+-> lembrando que as classes filhas obrigatoriamente precisam ter um método full name (se não o programa nao vai funcionar) - importante:
+o método pode ser modificado de acordo com a sua necessidade.. vemos isso no repositório conta_bancaria_v1-c
+-> as classes filhas podem nao utilizar os metodos get_bonus e raise_pay e tambem podem utilizá-los fazendo as modificações necessárias.
+
+class Employee(abc.ABC):
+  def __init__(self, fisrt, last, cpf, pay):
+    self._first = first
+    self._last = last
+    self._cpf = cpf
+    self._pay = pay
+    
+  def get_bonus(self):
+    return self._pay * 0.10
+   
+  @abc.abstractmethod
+  def full_name(self):
+    return f"Full name: {self._first} {self._last}"
+   
+  def raise_pay(self):
+    new_pay = self._pay * 1.10
+    return new_pay
+    
+  ____________________________________________________________________________________________________________________________
+  
+  
+    
+  
